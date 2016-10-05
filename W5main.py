@@ -25,3 +25,7 @@
         return width*height;
     }
 }
+Rectangle rec = new Rectangle(6,4); 
+rec.calcArea();
+rec.setSize(7,4) 
+rec.calcArea(); 

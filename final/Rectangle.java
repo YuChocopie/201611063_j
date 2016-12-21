@@ -1,33 +1,22 @@
-public class Rectangle {
-    private int width;
-    private int height;
-    public Rectangle(int w, int h) {
-        this.width=w;
-        this.height=h;
+package com.sd.ch8;
+
+public class Rectangle extends Shape {
+    private final double width, height, area, perimeter;
+    public Rectangle(double width, double height) {
+        this.width = width;
+        this.height= height;
+        this.area = width * height;
+        this.perimeter = 2 * (width + height);
     }
-    public int getWidth() {
-        return width;
+    @Override
+    public double calcArea() {
+        return this.area;
     }
-    public int getHeight() {
-        return height;
+    @Override
+    public double calcPerimeter() {
+        return this.perimeter;
     }
-    public void setHeight(int h) {
-        height=h;
-    }
-    public void setWidth(int newWidth){
-        width = newWidth;
-    }
-    public void setSize(int w, int h){
-        setWidth(w);
-        setHeight(h);
-    }
-    public int calcArea() {
-        return width*height;
-    }
-    public static void main(String[] args) {
-    	Rectangle r=new Rectangle(3,4);
-		System.out.println("면적: "+r.calcArea());
-		r.setSize(4,5);
-		System.out.println("면적: "+r.calcArea());
+    public String toString() {
+        return "Rectangle..."+super.toString();
     }
 }
